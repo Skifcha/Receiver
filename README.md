@@ -13,6 +13,8 @@ Anyway, you can use it with any iBeacon device, just put it's config data inside
 You need a developer or personal (free) Apple account to run on a real device. 
 Select your account under ["General"](http://take.ms/6wiwA) tab in project settings and run the project.
 
+If you are using free Apple account, verify the Developer App certificate for your account is trusted on your device. Open Settings on your device and navigate to General -> Device Management, then select your Developer App certificate to trust it.
+
 It may ask you to change "Bundle Identifier". You can do it on the same page, just change it to whatever unique and run the project.
 
 # Pros
