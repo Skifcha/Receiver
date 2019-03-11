@@ -6,6 +6,8 @@ Just launch this app on any real iOS device, it will start to receive iBeacon si
 iBeacon settings can be changed in Constants.swift file, but I suggest to keep it as it is, 
 since it contains the same region data as in [Broadcaster app](https://github.com/Skifcha/Broadcaster).
 
+Make sure you run Receiver.xcworkspace, not Receiver.xcodeproj, since it contains CocoaPods. I've includede them into repository so you don't need to install anything external.
+
 Anyway, you can use it with any iBeacon device, just put it's config data inside Constants.swift and relaunch the app.
 
 You need a developer or personal (free) Apple account to run on a real device. 
