@@ -28,7 +28,7 @@ class LockStatusViewController: UIViewController {
             animatedUnlockView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             animatedUnlockView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             animatedUnlockView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/3),
-            animatedUnlockView.heightAnchor.constraint(equalTo: animatedUnlockView.widthAnchor, multiplier: 540/450)
+            animatedUnlockView.heightAnchor.constraint(equalTo: animatedUnlockView.widthAnchor, multiplier: 1.2)
             ])
         
         animatedUnlockView.drawLock()

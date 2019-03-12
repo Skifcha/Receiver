@@ -25,6 +25,7 @@ class AnimatedUnlockView: BaseView {
     
     private var animationPerformed: Bool = false
     private lazy var toggleOvalShape = CAShapeLayer()
+    private let lineWidth: CGFloat = 3.5
     
     func drawLock() {
         // perform resize to real sizes first
@@ -37,7 +38,7 @@ class AnimatedUnlockView: BaseView {
         
         // configure dynamic top arc part of the lock
         let leftArcOffset = frame.width * 0.15
-        let arcHeight = frame.height * 0.3
+        let arcHeight = bigRoundView.frame.minY
         let arcWidth: CGFloat = frame.width / 7
         
         let arcPath = UIBezierPath(arcCenter: CGPoint(x: frame.width / 2, y: arcHeight), radius: frame.width / 2 - leftArcOffset, startAngle: .pi, endAngle: 0, clockwise: true)
@@ -72,7 +73,7 @@ class AnimatedUnlockView: BaseView {
     func configureShapeWithDefaultStyle( _ shapeLayer: inout CAShapeLayer) {
         shapeLayer.strokeColor = UIColor.white.cgColor
         shapeLayer.fillColor = backgroundColor?.cgColor
-        shapeLayer.lineWidth = 3.5
+        shapeLayer.lineWidth = lineWidth
     }
     
     func animateUnlock() {
@@ -90,7 +91,7 @@ class AnimatedUnlockView: BaseView {
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.75, initialSpringVelocity: 0, options: .curveEaseInOut, animations: { [weak self] in
             if let self = self {
                 // move toggle to right
-                self.toggleOvalView.transform = CGAffineTransform(translationX: self.toggleOvalView.frame.width + self.smallRoundView.frame.height / 2 + 3.5, y: 0)
+                self.toggleOvalView.transform = CGAffineTransform(translationX: self.toggleOvalView.frame.width + self.smallRoundView.frame.height / 2 + self.lineWidth, y: 0)
             }
         }) { [weak self] (_) in
             UIView.animate(withDuration: 1, delay: 0.5, usingSpringWithDamping: 0.75, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
